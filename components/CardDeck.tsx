@@ -112,13 +112,20 @@ export default function CardDeck() {
             {String(active + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
           </p>
           <div className="mt-2 flex justify-end gap-1.5">
-            {BEREICHE.map((_, i) => (
-              <span
-                key={i}
-                className={`h-[2px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
-                  i === active ? "bg-ochre w-6" : "bg-stone-500/40 w-2"
-                }`}
-              />
+            {BEREICHE.map((b, i) => (
+              <button
+                key={b.slug}
+                type="button"
+                aria-label={`Zu Bereich ${b.title}`}
+                onClick={() => setActive(i)}
+                className="group/dot relative -mx-0.5 flex h-6 items-center px-0.5"
+              >
+                <span
+                  className={`block h-[2px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+                    i === active ? "bg-ochre w-6" : "bg-stone-500/40 w-2 group-hover/dot:bg-stone-500/80"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>

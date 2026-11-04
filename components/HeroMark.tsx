@@ -23,7 +23,7 @@ export default function HeroMark() {
   return (
     <h1
       ref={ref}
-      className="mega text-[clamp(2.8rem,13vw,13rem)] text-walnut-deep"
+      className="mega text-[clamp(2.4rem,13vw,13rem)] text-walnut-deep"
     >
       <span className="block">
         <span className="hero-word">Schreinerei</span>
